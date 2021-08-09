@@ -59,11 +59,11 @@ const StuModel = mongooes.model("student", stuSchema);
     document的方法
         save([options],[fn])
 */
-// stu.save(function(err){
-//     if(!err){
-//         console.log('保存成功')
-//     }
-// })
+stu.save(function(err){
+    if(!err){
+        console.log('保存成功')
+    }
+})
 
 StuModel.findOne({}, function(err, doc){
     if(!err){
@@ -115,8 +115,8 @@ StuModel.findOne({}, function(err, doc){
         // console.log(JSON.stringify(doc))
         // console.log(doc.toObject())
         // //  隐藏address
-        // let show = doc.toObject()
-        // delete show.address
-        // console.log(show)
+        let show = doc.toObject()
+        delete show.address
+        console.log(show)
     }
 })

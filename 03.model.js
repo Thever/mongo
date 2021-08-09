@@ -41,7 +41,7 @@ const stuSchema = new Schema({
 // mongoose会自动将集合名变为复数
 const StuModel = mongooes.model("student", stuSchema); 
 
-//  有了model就能对数据库进行增删改查操作
+// //  有了model就能对数据库进行增删改查操作
 // const data = [
 //     {
 //         name:'jojo',
@@ -66,49 +66,49 @@ const StuModel = mongooes.model("student", stuSchema);
 //     }
 // });
 
-//  查询操作
-/* 
-    查询:
-    model.find(conditions,[projection],[options],callback)
-    conditions:查询的条件 
-    projection:投影  { name: 1, gender: 1, _id: 0 } 或 'name gender -_id'
-    options:查询选项  { skip: xx, limit: xx }   
+// //  查询操作
+// /* 
+//     查询:
+//     model.find(conditions,[projection],[options],callback)
+//     conditions:查询的条件 
+//     projection:投影  { name: 1, gender: 1, _id: 0 } 或 'name gender -_id'
+//     options:查询选项  { skip: xx, limit: xx }   
 
-    model.findOne(...)
-    model.findById(...)
+//     model.findOne(...)
+//     model.findById(...)
 
-    model.countDocuments(conditions,callback) 查询文档的数量
- */
-//  find返回符合条件的数组
-//  返回全部
+//     model.countDocuments(conditions,callback) 查询文档的数量
+//  */
+// //  find返回符合条件的数组
+// //  返回全部
 // StuModel.find({},function(err, docs){
 //     if(!err){
 //         //  没错输出查到的内容
 //         console.log(docs)
 //     }
 // })
-//  返回孙悟空
+// //  返回孙悟空
 // StuModel.find({name:'孙悟空'},function(err, docs){
 //     if(!err){
 //         //  没错输出查到的内容
 //         console.log(docs)
 //     }
 // })
-//  只要name,不要_id
+// //  只要name,不要_id
 // StuModel.find({name:'孙悟空'},{name:1, _id:0}, function(err, docs){
 //     if(!err){
 //         //  没错输出查到的内容
 //         console.log(docs)
 //     }
 // })
-//  另一种写法
+// //  另一种写法
 // StuModel.find({name:'孙悟空'}, 'name -_id', function(err, docs){
 //     if(!err){
 //         //  没错输出查到的内容
 //         console.log(docs)
 //     }
 // })
-// 跳过2个，返回2个name
+// // 跳过2个，返回2个name
 // StuModel.find({},'name -_id',{skip:2, limit:2},function(err, docs){
 //     if(!err){
 //         //  没错输出查到的内容
@@ -116,37 +116,37 @@ const StuModel = mongooes.model("student", stuSchema);
 //     }
 // })
 
-// findOne只返回一个符合条件的对象
+// // findOne只返回一个符合条件的对象
 // StuModel.findOne({}, function(err, doc){
 //     if(!err){
 //         console.log(doc)
 //     }
 // })
 
-// findById只返回一个符合条件的对象
+// // findById只返回一个符合条件的对象
 // StuModel.findById('610cf0e7c962d7329c89b9ce', function(err, doc){
 //     if(!err){
 //         console.log(doc)
 //     }
 // })
-//  获取当前model的文档数量
+// //  获取当前model的文档数量
 // StuModel.countDocuments({}, function (err, data) {
 //     console.log(data);
 // });
 
-//  通过find()查询的结果，数据库数据的返回对象，就是Document,文档对象
-//  Document对象是Model的实例，
-//  mongoose #号方法表示 Model的实例，也就是 Document,可以对应调用
+// //  通过find()查询的结果，数据库数据的返回对象，就是Document,文档对象
+// //  Document对象是Model的实例，
+// //  mongoose #号方法表示 Model的实例，也就是 Document,可以对应调用
 
-/* 修改：
-    model.update(conditions,[doc],[options],callback)
-    model.updateMany(conditions,[doc],[options],callback)
-    model.uodateOne(conditions,[doc],[options],callback)
-        conditions:查询条件
-        doc:修改后的文档对象
-        options:配置参数
-        callback：回调函数
-*/
+// /* 修改：
+//     model.update(conditions,[doc],[options],callback)
+//     model.updateMany(conditions,[doc],[options],callback)
+//     model.uodateOne(conditions,[doc],[options],callback)
+//         conditions:查询条件
+//         doc:修改后的文档对象
+//         options:配置参数
+//         callback：回调函数
+// */
 // StuModel.updateOne({name:'唐僧'}, {$set:{age:20}}, function(err){
 //     if(!err){
 //         console.log('修改成功')
@@ -159,13 +159,13 @@ const StuModel = mongooes.model("student", stuSchema);
 //     }
 // });
 
-/* 
-/* 
-删除：
-model.remove(conditions,callback)
-model.deleteOne(conditions,callback)
-model.deleteMany(conditions,callback)
-*/
+// /* 
+// /* 
+// 删除：
+// model.remove(conditions,callback)
+// model.deleteOne(conditions,callback)
+// model.deleteMany(conditions,callback)
+// */
 // StuModel.remove({name:'jojo'},function(err,doc){
 //     if(!err){
 //         console.log('删除成功')
@@ -179,7 +179,7 @@ model.deleteMany(conditions,callback)
 //     }
 // });
 
-// 统计数量
+// // 统计数量
 // StuModel.count({},function(err, count){
 //     if(!err){
 //         console.log(count)
